@@ -1,10 +1,12 @@
 import React from 'react';
+import Board from './components/ Board'
+import './Ruta/styles.css'
 
 
 function App() {
   return (
-    <div className='container mt-5'>
-      <h1>Hola Mundo</h1>
+    <div className='container'>
+      <Board />
     </div>
   );
 }
