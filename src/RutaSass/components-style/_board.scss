@@ -1,4 +1,5 @@
-.container-card {
+//contenedor de tablero//
+.wrap{
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
@@ -6,126 +7,39 @@
   height: 100%;
   perspective: 1200px;
   position: relative;
-  background: rgb(48, 235, 241);
-  border: 2px solid rgb(220, 234, 236);
-  border-radius: 30px 20px;
-  margin-bottom: 4px;
  }
- .size-card{
+
+//tarjeta//
+ .card-poke{
+  background: rgb(252, 255, 226);
   width: 120px;
-  height: 120px;
+  height: 200px;
+  position: relative;
+  transform: scale(1);
+  transform-style: preserve-3d;
+  transition: transform .8s;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, .3);
+}
+.size-img{
+  height: 80% !important;
+  width: 80% !important;
+  margin-top: inherit;
+}
+  .card-poke:hover {
+    transform: rotateY(180deg);
+    
+  }
+
+  .front-face,
+.back-face {
+  width: 100%;
+  height: 100%;
+  padding: .5px;
+  position: absolute;
+  border-radius: 5px;
+  backface-visibility: hidden;
 }
 
-// /*MENU POTTER*/
-// .flip_card {
-//   width: 240px;
-//   height: 400px;
-//   perspective: 1000px;
-//   display: inline-block;
-//   align-content: center;
-//   justify-content: space-around;
-//   cursor: pointer;
-//   cursor: pointer; 
-//   border: 5px solid #17141d;
-//   border: 5px solid #17141d;
-//   background-color: #000000;
-//   margin: 20px;
-// }
-
-// .flip_card .flip_card_front .img_potter{
-//   width: 180px;
-//   height: 250px;
-// } 
-
-// /*Este contenedor es necesario para colocar la parte delantera y trasera. */
-// .flip_card_inner {
-//   position: relative;
-//   width: 100%;
-//   height: 100%;
-//   text-align: center;
-//   transition: transform 0.8s;
-//   transform-style: preserve-3d;
-// }
-
-// /* Realice un giro horizontal cuando mueva el mouse sobre el contenedor del contenedor*/
-// .flip_card:hover .flip_card_inner {
-//   transform: rotateY(180deg);
-// }
-
-// /* Posiciona la parte delantera y trasera. */
-// .flip_card_front, .flip_card_back {
-//   position: absolute;
-//   width: 100%;
-//   height: 100%;
-//   backface-visibility: hidden;
-//   align-content: center;
-// }
-
-// /* Estilo de la parte posterior*/
-// .flip_card_back {
-//   background-color: #000000;
-//   color:  #000000;
-//   transform: rotateY(180deg);
-//   cursor: pointer;
-//   width: 100%;
-//   height: 100%;
-//   background: url(./imagenes/mapa.png) no-repeat;
-//   background-size: cover;
-//   font-size: 18px;
-//   font-weight: bold;
-//   -webkit-text-stroke: 0.6px #4c3a28;
-//   text-shadow: #4c3a28 0.8px;
-// }
-
-// .escudo {
-//   width: 44%;
-//   margin: 3px auto;
-// }
-// .caracteristicas {
-//   margin: 5px;
-//   padding: 0;
-// }
-
-  // .memory-game {
-  //   width: 640px;
-  //   height: 640px;
-  //   margin: auto;
-  //   display: flex;
-  //   flex-wrap: wrap;
-  //   perspective: 1000px;
-  // }
-  
-  // .memory-card {
-  //   width: calc(25% - 10px);
-  //   height: calc(33.333% - 10px);
-  //   margin: 5px;
-  //   position: relative;
-  //   transform: scale(1);
-  //   transform-style: preserve-3d;
-  //   transition: transform .5s;
-  //   box-shadow: 1px 1px 1px rgba(0,0,0,.3);
-  // }
-  
-  // .memory-card:active {
-  //   transform: scale(0.97);
-  //   transition: transform .2s;
-  // }
-  
-  // .memory-card.flip {
-  //   transform: rotateY(180deg);
-  // }
-  
-  // .front-face,
-  // .back-face {
-  //   width: 100%;
-  //   height: 100%;
-  //   padding: 20px;
-  //   position: absolute;
-  //   border-radius: 5px;
-  //   background: #1C7CCC;
-  //   backface-visibility: hidden;
-  // }
-  
-  // .front-face {
-  //   transform: rotateY(180deg);
-  // }
+.front-face {
+  transform: rotateY(180deg);
+}

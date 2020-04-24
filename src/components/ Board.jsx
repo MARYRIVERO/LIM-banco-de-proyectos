@@ -1,5 +1,6 @@
 import React from 'react'
 import dataPokemones from './dataPokemones'
+import pokemon from '../pictures/fondo-pikachu.jpg'
 import '../Ruta/styles.css'
 
 const  Board = () => {
@@ -22,14 +23,20 @@ const  Board = () => {
             <button className='btn btn-outline-info mb-4 ml-auto mr-4' type='text'>Reiniciar Partida</button>
             </div>
 
-            <section className='card-deck container-card'>
+            <section className='wrap'>
                 {
-                shuffle(dataPokemones).map((item,index) => (
-                    
-                    <div className= 'border border-secondary rounded-lg bg-light mx-2 my-2' key={ index }>
-                        <img className= 'size-card mt-4 ' src={ item.img } alt="sample pokemones"/>
-                        <p className='text-black text-center font-weight-bold'>{ item.name } </p>
-                    </div>
+                shuffle(dataPokemones).map((item,index) => 
+                (      
+                    <div className= ''>
+                        <div className= 'card-poke border border-secondary rounded-lg mx-2 my-2' key={ index }>
+                                <div className="size-card">
+                                <img className= 'front-face size-img mt-4' src={ item.img } alt="sample pokemones"/>
+                                <img src= { pokemon } alt="" className="back-face"/>
+                                <p className='front-face text-black text-center font-weight-bold'>{ item.name } </p>
+                                </div>
+                            </div>        
+                        </div>
+                        
                 ))
                 }
             </section>  
@@ -37,4 +44,4 @@ const  Board = () => {
     )
 }
 
-export default  Board
+export default  Board;
